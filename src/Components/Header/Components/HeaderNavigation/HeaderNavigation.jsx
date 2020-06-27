@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from '../../../../img/logo.png';
-import './index.scss';
 import { LinkCustom } from '../../../LinkCustom';
 import { Navigation } from '../../../Navigation';
 
