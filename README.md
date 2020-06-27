@@ -1,17 +1,17 @@
 # Тестовое задание
 
-### Макет сайта в figma
+## Макет сайта в figma
 
-https://www.figma.com/file/w7yaFmRCdmxcaWfOlEoihy/test-site?node-id=0%3A1
+[ссылка на макет](https://www.figma.com/file/w7yaFmRCdmxcaWfOlEoihy/test-site?node-id=0%3A1)
 
-### Используемые технологии
+## Используемые технологии
 
 * Основные
-    * React
-    * Redux
+  * React
+  * Redux
 * Вспомогательные
-    * react-redux
-    * react-router
-    * formik
+  * react-redux
+  * react-router
+  * formik
 
 Сайт создан с использованием create-react-app
