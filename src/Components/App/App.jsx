@@ -1,13 +1,12 @@
 import React from 'react';
 import './index.scss';
-import { Header } from '../Header';
-import { NavigationView } from '../Navigation';
+import { Header, HeaderNavigation } from '../Header';
 
 export function App() {
   return (
     <div className='App'>
       <Header>
-        <NavigationView isAuth={false} />
+        <HeaderNavigation />
       </Header>
     </div>
   );
