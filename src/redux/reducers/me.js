@@ -2,6 +2,7 @@ import { actionTypesMe as actionTypes } from '../actions';
 
 const initialState = {
   isAuth: false,
+  isLoading: false,
   name: null,
   mail: null,
   city: null,
@@ -20,6 +21,11 @@ export const me = (state = initialState, action) => {
       };
     case actionTypes.REMOVE_ME:
       return initialState;
+    case actionTypes.SET_IS_lOADING:
+      return {
+        ...state,
+        isLoading: action.isLoading
+      }
     default:
       return state;
   }
