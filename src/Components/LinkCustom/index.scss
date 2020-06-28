@@ -8,19 +8,19 @@
   justify-content: center;
   color: $color-black;
   height: $link-height;
-  outline: none;
-
+  
   &:focus {
-    box-shadow: 0 0 0 3px rgba($color: $color-green, $alpha: 0.5);
+    outline: 2px solid rgba($color: $color-green, $alpha: 0.5);
+    
   }
 
   &_Active {
     &_BorderGreen {
-      border: 4px solid $color-green;
+      box-shadow: 0 0 0 3px $color-green inset;
     }
 
     &_BorderBlack {
-      border: 2px solid $color-black;
+      box-shadow: 0 0 0 4px rgba($color: $color-black, $alpha: 0.5) inset;
     }
   }
 
@@ -30,26 +30,29 @@
       transition: border $transition-duration;
       
       &:hover {
-        border: 2px solid $color-black;
+        box-shadow: 0 0 4px 0 rgba($color: $color-black, $alpha: 0.5) inset;
+      }
+      &:active {
+        box-shadow: 0 4px 4px 0 rgba($color: $color-black, $alpha: 0.5) inset;
       }
     }
     
     &_Transparent {
-      transition: border $transition-duration;
+      transition: box-shadow $transition-duration;
       
       &:hover {
-        border: 4px solid $color-green;
+        box-shadow: 0 0 0 3px $color-green inset;
       }
     }
   }
 
   &_Radius {
     &_Lg {
-      border-radius: $link-border-radius-lg;
+      border-radius: $border-radius-lg;
     }
     
     &_Sm {
-      border-radius: $link-border-radius-sm;
+      border-radius: $border-radius-sm;
     }
   }
 
