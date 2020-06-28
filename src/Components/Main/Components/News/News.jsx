@@ -43,14 +43,6 @@ export function News() {
   return (
     <div className='News'>
       {news}
-      {/* <div className='News__Button'>
-        <Button
-          type='green'
-          width='fullContainer'
-        >
-          Загрузить больше
-        </Button>
-      </div> */}
     </div>
   );
 }
