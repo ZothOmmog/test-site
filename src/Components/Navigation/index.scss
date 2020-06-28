@@ -1,0 +1,21 @@
+@import '../../styles/variables.scss';
+
+.Navigation {
+  &__Logo {
+    height: 40px;
+  }
+}
+
+.NavList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  
+  &__Item + &__Item {
+    margin-left: $base*4;
+  }
+}

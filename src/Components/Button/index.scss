@@ -1,0 +1,66 @@
+@import '../../styles/variables.scss';
+
+.Button {
+  font-family: 'Roboto', sans-serif;
+  font-size: $font-size-xs;
+  font-weight: normal;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-black;
+  height: $button-height;
+  cursor: pointer;
+  border: none;
+  
+  &:focus {
+    outline: 2px solid rgba($color: $color-green, $alpha: 0.5);
+  }
+  
+  &_Type {
+    &_Green {
+      background-color: $color-green;
+      transition: box-shadow $transition-duration;
+      color: white;
+      transition: box-shadow $transition-duration;
+      box-shadow: 0 4px 10px 0 rgba($color: $color-black, $alpha: 0.25);
+      
+      &:hover {
+        box-shadow: 0 0 4px 0 rgba($color: $color-black, $alpha: 0.5) inset;
+      }
+      &:active {
+        box-shadow: 0 4px 4px 0 rgba($color: $color-black, $alpha: 0.5) inset;
+      }
+    }
+
+    &_Exit {
+      background-color: transparent;
+      transition-duration: $transition-duration;
+      border-radius: $border-radius-sm;
+
+      &:hover {
+        background-color: rgba($color: $color-red, $alpha: 0.25);
+      }
+    }
+  }
+
+  &_Radius {
+    &_Lg {
+      border-radius: $border-radius-lg;
+    }
+    
+    &_Sm {
+      border-radius: $border-radius-sm;
+    }
+  }
+
+  &_Width {
+    &_FullContainer {
+      width: 100%;
+    }
+
+    &_Fixed {
+      width: $button-width-sm;
+    }
+  }
+}

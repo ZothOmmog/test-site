@@ -1,0 +1,14 @@
+@import '../../../../styles/variables.scss';
+
+.News {
+  max-width: 1160px;
+  margin: $base*10 $base*4 0;
+
+  &__Item + &__Item {
+    margin-top: $base*5;
+  }
+
+  &__Button {
+    margin-top: $base*5;
+  }
+}

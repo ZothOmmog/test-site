@@ -1,0 +1,68 @@
+@import '../../styles/variables.scss';
+
+.Link {
+  font-weight: lighter;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-black;
+  height: $link-height;
+  
+  &:focus {
+    outline: 2px solid rgba($color: $color-green, $alpha: 0.5);
+    
+  }
+
+  &_Active {
+    &_BorderGreen {
+      box-shadow: 0 0 0 3px $color-green inset;
+    }
+
+    &_BorderBlack {
+      box-shadow: 0 0 0 4px rgba($color: $color-black, $alpha: 0.5) inset;
+    }
+  }
+
+  &_Type {
+    &_Green {
+      background-color: $color-green;
+      transition: border $transition-duration;
+      
+      &:hover {
+        box-shadow: 0 0 4px 0 rgba($color: $color-black, $alpha: 0.5) inset;
+      }
+      &:active {
+        box-shadow: 0 4px 4px 0 rgba($color: $color-black, $alpha: 0.5) inset;
+      }
+    }
+    
+    &_Transparent {
+      transition: box-shadow $transition-duration;
+      
+      &:hover {
+        box-shadow: 0 0 0 3px $color-green inset;
+      }
+    }
+  }
+
+  &_Radius {
+    &_Lg {
+      border-radius: $border-radius-lg;
+    }
+    
+    &_Sm {
+      border-radius: $border-radius-sm;
+    }
+  }
+
+  &_Width {
+    &_FullContainer {
+      width: 100%;
+    }
+
+    &_Fixed {
+      width: 140px;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+@import '../../../../styles/variables.scss';
+
+.ProfileView {
+  height: calc(100vh - #{$header-height});
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin: 0 $base*4;
+  
+  &__OutherWrapper {
+    margin-top: $base*10;
+    flex-basis: 900px;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    border-radius: $border-radius-md;
+    box-shadow: 0 0 20px 0 rgba($color: $color-black, $alpha: 0.5);
+  }
+
+  &__InnerWrapper {
+    margin: 0 $base*4;
+  }
+
+  &__Header {
+    height: 200px;
+    display: flex;
+    align-items: center;
+  }
+  
+  &__Img {
+    height: 100px;
+    width: 100px;
+    border-radius: $border-radius-xl;
+  }
+
+  &__Name {
+    margin-left: 16px;
+    font-size: $font-size-lg;
+    font-weight: lighter;
+    color: $color-black;
+  }
+
+  &__Navigation {
+    border-bottom: 1px solid rgba($color: $color-black, $alpha: 0.1);
+    
+    &Info {
+      color: $color-black;
+      
+      &OutherWrapper {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        border-bottom: 1px solid $color-green;
+      }
+    }
+  }
+
+  &__Info {
+    margin-top: $base*8;
+
+    &Item {
+      display: flex;
+
+      &Title {
+        flex-basis: $base*50;
+        font-size: $font-size-md;
+        color: $color-black;
+        margin-right: $base*2;
+
+        &::after {
+          content: ':';
+        }
+      }
+  
+      &Description {
+        font-size: $font-size-md;
+        color: $color-gray;
+      }
+    }
+
+    &Item + &Item {
+      margin-top: $base*4;
+    }
+  }
+
+}
