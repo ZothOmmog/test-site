@@ -6,12 +6,16 @@ import {
 
 import {
   setMe,
-  removeMe,
+  setIsLoading,
   setOneNews
 } from '../actions';
 
 //===========me===========
 export const getMeWithTokenThunk = () => async (dispatch) => {
+  dispatch(
+    setIsLoading(true)
+  );
+
   const token = localStorage.getItem('me');
   let me;
 
@@ -19,59 +23,70 @@ export const getMeWithTokenThunk = () => async (dispatch) => {
     token
   ) me = await GET_ME_FROM_SERVER_IF_TOKEN(token);
 
-  if(!me) return false;
+  if (!me) {
+    dispatch(
+      setIsLoading(false)
+    );
+
+    return;
+  }
 
   dispatch(
     setMe(me)
   );
-  return true;
+
+  dispatch(
+    setIsLoading(false)
+  );
 };
 
 export const getMeWithNamePassThunk = (name, password) => async (dispatch) => {
-  const me = await GET_ME_FROM_SERVER_IF_LOGIN(name, password);
+  dispatch(
+    setIsLoading(true)
+  );
 
-  if(!me) return false;
+  const me = await GET_ME_FROM_SERVER_IF_LOGIN(name, password);
 
   dispatch(
     setMe(me)
   );
-  return true;
-};
-
-export const removeMeThunk = () => async (dispatch) => {
-  localStorage.removeItem('me');
 
   dispatch(
-    removeMe()
+    setIsLoading(false)
   );
-  return true;
 };
 //========================
 
 //===========news===========
 export const getNewsThunk = () => async (dispatch) => {
+  dispatch(
+    setIsLoading(true)
+  );
+
   let news;
 
-  news =  GET_NEWS_FROM_SERVER();
+  news = await GET_NEWS_FROM_SERVER();
   dispatch(
     setOneNews(news)
   );
 
-  news =  GET_NEWS_FROM_SERVER();
+  news = await GET_NEWS_FROM_SERVER();
   dispatch(
     setOneNews(news)
   );
 
-  news =  GET_NEWS_FROM_SERVER();
+  news = await GET_NEWS_FROM_SERVER();
   dispatch(
     setOneNews(news)
   );
 
-  news =  GET_NEWS_FROM_SERVER();
+  news = await GET_NEWS_FROM_SERVER();
   dispatch(
     setOneNews(news)
   );
 
-  return true;
+  dispatch(
+    setIsLoading(false)
+  );
 };
 //==========================
