@@ -61,10 +61,33 @@
       text-transform: uppercase;
       color: rgba($color: $color-black, $alpha: 0.25);
     }
+
+    &_Error {
+      border: 1px solid $color-red;
+      border-radius: $border-radius-sm;
+    }
+
+  }
+  &__InputError {
+    display: none;
+    color: $color-red;
+
+    &::before {
+      content: '*'
+    }
+
+    &_Visible {
+      display: block;
+    }
   }
   
   &__Submit {
     margin-top: $base*12;
     text-transform: lowercase;
+
+    &_Disable {
+      pointer-events: none;
+      opacity: 0.5;
+    }
   }
 }
