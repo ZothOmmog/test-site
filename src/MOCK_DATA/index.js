@@ -47,7 +47,7 @@ const MOCK_DATA_SET_NEWS_THUNK = [
   }
 ]
 
-const prevToken = 1;
+let prevToken = 1;
 export const GET_ME_FROM_SERVER_IF_LOGIN = async (name, password) => {
   await sleep(2000);
 
