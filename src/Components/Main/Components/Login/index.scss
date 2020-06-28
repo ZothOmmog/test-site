@@ -1,0 +1,70 @@
+@import '../../../../styles/variables.scss';
+
+.Login {
+  display: flex;
+  height: calc(100vh - #{$header-height});
+  width: 100vw;
+
+  &__Right, &__Left {
+    height: 100%;
+  }
+
+  &__Left {
+    width: 40%;
+    min-width: 375px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__Right {
+    width: 60%;
+    background-image: url('./img/Right.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__LoginFormWrapper {
+    margin: 0 $base*4;
+  }
+}
+
+.LoginForm {
+  &__Logo {
+    display: block;
+    height: 55px;
+  }
+
+  &__Title {
+    font-weight: normal;
+    font-size: $font-size-lg;
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  &__Input {
+    margin-top: $base*12;
+    display: block;
+    padding: 8px 0;
+    border: none;
+    border-bottom: 1px solid rgba($color: $color-black, $alpha: 0.25);
+    width: 350px;
+    font-family: 'Roboto', sans-serif;
+    font-size: $font-size-xs;
+    color: $color-black;
+
+    &:focus {
+      outline: 2px solid rgba($color: $color-green, $alpha: 0.5);
+    }
+    
+    &::placeholder {
+      text-transform: uppercase;
+      color: rgba($color: $color-black, $alpha: 0.25);
+    }
+  }
+  
+  &__Submit {
+    margin-top: $base*12;
+    text-transform: lowercase;
+  }
+}
