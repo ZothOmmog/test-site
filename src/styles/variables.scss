@@ -7,11 +7,14 @@ $font-size-lg: 35px;
 $font-size-xl: 50px;
 
 $color-black: #212121;
+$color-gray: #515151;
 $color-green: #27c583;
 $color-red: #d80e0e;
 
-$link-border-radius-sm: 5px;
-$link-border-radius-lg: 15px;
+$border-radius-sm: 5px;
+$border-radius-md: 10px;
+$border-radius-lg: 15px;
+$border-radius-xl: 50px;
 
 $link-width-sm: 140px;
 $link-height: 40px;
@@ -20,3 +23,5 @@ $button-width-sm: $link-width-sm;
 $button-height: $link-height;
 
 $transition-duration: 0.2s;
+
+$header-height: 60px;
