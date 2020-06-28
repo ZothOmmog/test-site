@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import { MainPage } from '../MainPage';
 import { Login } from '../Login';
 import { News } from '../News/News';
-import { ProfileView } from '../Profile/Profile';
+import { ProfileView } from '../Profile';
 
 export function Routes() {
   return (
