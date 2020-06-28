@@ -1,0 +1,15 @@
+@import '../../../../styles/variables.scss';
+
+.MainPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - #{$header-height});
+  text-align: center;
+
+  &__Title {
+    margin: 50px 0 0;
+    font-weight: lighter;
+    font-size: $font-size-xl;
+  }
+}
