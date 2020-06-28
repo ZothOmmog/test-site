@@ -20,7 +20,7 @@
     }
 
     &_BorderBlack {
-      box-shadow: 0 0 0 4px rgba($color: $color-black, $alpha: 0.5) inset;
+      box-shadow: 0 4px 4px 0 rgba($color: $color-black, $alpha: 0.5) inset;
     }
   }
 
@@ -30,9 +30,6 @@
       transition: border $transition-duration;
       
       &:hover {
-        box-shadow: 0 0 4px 0 rgba($color: $color-black, $alpha: 0.5) inset;
-      }
-      &:active {
         box-shadow: 0 4px 4px 0 rgba($color: $color-black, $alpha: 0.5) inset;
       }
     }
