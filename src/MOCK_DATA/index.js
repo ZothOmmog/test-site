@@ -93,4 +93,6 @@ export const GET_NEWS_FROM_SERVER = async function* () {
 
   await sleep(1000);
   yield MOCK_DATA_SET_NEWS_THUNK[3];
+
+  return;
 }
