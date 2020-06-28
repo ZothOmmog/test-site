@@ -20,7 +20,6 @@ export function HeaderNavigation() {
             type='transparent'
             radius='lg'
             width='fixed'
-            active='borderGreen'
           >
             Главная
           </LinkCustom>
@@ -34,6 +33,16 @@ export function HeaderNavigation() {
             Новости
           </LinkCustom>
       </Navigation>
+      <Navigation>
+      <LinkCustom 
+        className='Navigation__LogIn'
+        to='/profile' 
+        type='transparent'
+        radius='lg'
+        width='fixed'
+      >
+        Профиль
+      </LinkCustom>
       <LinkCustom 
         className='Navigation__LogIn'
         to='/login' 
@@ -43,6 +52,7 @@ export function HeaderNavigation() {
       >
         Вход
       </LinkCustom>
+      </Navigation>
     </Navigation>
   );
 }
