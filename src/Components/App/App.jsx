@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.scss';
 import { Header, HeaderNavigation } from '../Header';
+import { Main } from '../Main';
 
 export function App() {
   return (
@@ -8,6 +9,7 @@ export function App() {
       <Header>
         <HeaderNavigation />
       </Header>
+      <Main />
     </div>
   );
 };
