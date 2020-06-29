@@ -5,6 +5,7 @@ import { Header, HeaderNavigation } from '../Header';
 import { Main } from '../Main';
 import { connect } from 'react-redux';
 import { getMeWithTokenThunk } from '../../redux';
+import { Preloader } from '../Preloader';
 
 App.propTypes = {
   getMeWithTokenThunk: PropTypes.func
@@ -20,18 +21,14 @@ export function App({ getMeWithTokenThunk }) {
     })();
   }, [getMeWithTokenThunk]);
 
-  return (
-    <div className='App'>
-      {!isLoading ? (
-        <>
-          <Header>
+  return !isLoading ? (
+          <div className='App'>
+            <Header>
             <HeaderNavigation />
-          </Header>
-          <Main />
-        </>
-      ) : 'Загрузка...'} 
-    </div>
-  );
+            </Header>
+            <Main />
+          </div>
+      ) : <div className='App__Preloader'><Preloader /></div>
 };
 
 export const AppWithLogin = connect(null, { getMeWithTokenThunk })(App)

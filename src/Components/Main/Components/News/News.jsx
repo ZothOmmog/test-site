@@ -5,6 +5,7 @@ import { NewsItem } from './Components';
 import { NewsItemWrapper } from './Components';
 import { connect } from 'react-redux';
 import { getNewsThunk, removeAllNews } from '../../../../redux';
+import { Preloader } from '../../../Preloader';
 
 NewsView.propTypes = {
   isLoading: PropTypes.bool,
@@ -35,7 +36,7 @@ export function NewsView({ isLoading, items, getNewsThunk, removeAllNews }) {
   return (
     <div className='News'>
       {news}
-      {isLoading ? 'Загрузка...' : null}
+      {isLoading ? <div className="News__Preloader"><Preloader /></div> : null}
     </div>
   );
 }
