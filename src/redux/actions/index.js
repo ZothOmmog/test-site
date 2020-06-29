@@ -12,7 +12,7 @@ export const actionTypesNews = {
 //=================================
 
 //===========me===========
-export const setMe = (name, mail, city, img) => ({
+export const setMe = ({ name, mail, city, img }) => ({
   type: actionTypesMe.SET_ME,
   name: name,
   mail: mail,
