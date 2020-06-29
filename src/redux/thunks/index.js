@@ -71,28 +71,12 @@ export const getNewsThunk = () => async (dispatch) => {
   dispatch(
     setIsLoading(true)
   );
-
-  let news;
-
-  news = await GET_NEWS_FROM_SERVER();
-  dispatch(
-    setOneNews(news)
-  );
-
-  news = await GET_NEWS_FROM_SERVER();
-  dispatch(
-    setOneNews(news)
-  );
-
-  news = await GET_NEWS_FROM_SERVER();
-  dispatch(
-    setOneNews(news)
-  );
-
-  news = await GET_NEWS_FROM_SERVER();
-  dispatch(
-    setOneNews(news)
-  );
+  
+  for await (let news of GET_NEWS_FROM_SERVER()) {
+    dispatch(
+      setOneNews(news)
+    );
+  }
 
   dispatch(
     setIsLoading(false)

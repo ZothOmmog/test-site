@@ -67,17 +67,8 @@ export const GET_ME_FROM_SERVER_IF_TOKEN = async (token) => {
 }
 
 export const GET_NEWS_FROM_SERVER = async function* () {
-  await sleep(1000);
-  yield MOCK_DATA_SET_NEWS_THUNK[0];
-
-  await sleep(1000);
-  yield MOCK_DATA_SET_NEWS_THUNK[1];
-
-  await sleep(1000);
-  yield MOCK_DATA_SET_NEWS_THUNK[2];
-
-  await sleep(1000);
-  yield MOCK_DATA_SET_NEWS_THUNK[3];
-
-  return;
+  for(let news of MOCK_DATA_SET_NEWS_THUNK) {
+    await sleep(1000);
+    yield news;
+  }
 }
