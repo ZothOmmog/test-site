@@ -17,19 +17,16 @@ export const getMeWithTokenThunk = () => async (dispatch) => {
   );
 
   const token = localStorage.getItem('me');
-  let me;
 
-  if (
-    token
-  ) me = await GET_ME_FROM_SERVER_IF_TOKEN(token);
-
-  if (!me) {
+  if (!token) {
     dispatch(
       setIsLoading(false)
     );
 
     return;
-  }
+  } 
+  
+  const me = await GET_ME_FROM_SERVER_IF_TOKEN(token);
 
   dispatch(
     setMe(me)
@@ -54,8 +51,11 @@ export const getMeWithNamePassThunk = (name, password) => async (dispatch) => {
     return false;
   }
 
+  const { token, ...meForSate } = me;
+  localStorage.setItem('me', token);
+
   dispatch(
-    setMe(me)
+    setMe(meForSate)
   );
 
   dispatch(
