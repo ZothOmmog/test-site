@@ -46,6 +46,13 @@ export const getMeWithNamePassThunk = (name, password) => async (dispatch) => {
   );
 
   const me = await GET_ME_FROM_SERVER_IF_LOGIN(name, password);
+  
+  if (!me) {
+    dispatch(
+      setIsLoading(false)
+    );
+    return false;
+  }
 
   dispatch(
     setMe(me)
@@ -54,6 +61,8 @@ export const getMeWithNamePassThunk = (name, password) => async (dispatch) => {
   dispatch(
     setIsLoading(false)
   );
+
+  return true;
 };
 //========================
 
