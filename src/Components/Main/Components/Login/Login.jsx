@@ -53,10 +53,10 @@ function LoginView({ isLoading, getMeWithNamePassThunk }) {
 
                 const isAuth = await getMeWithNamePassThunk(name, password);
 
-                if (!isAuth) setErrorFromServer('Имя пользователя или пароль введены не верно');
-                else if (errorFromServer) setErrorFromServer('');
-
-                setSubmitting(false);
+                if (!isAuth) {
+                  setErrorFromServer('Имя пользователя или пароль введены не верно');
+                  setSubmitting(false);
+                }
               }}
             >
               {({
