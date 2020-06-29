@@ -31,9 +31,9 @@ export const setIsLoading = (isLoading) => ({
 //========================
 
 //===========news===========
-export const setOneNews = (news) => ({
+export const setNews = (news) => ({
   type: actionTypesNews.SET_ONE_NEWS,
-  news: news
+  items: news
 });
 
 export const removeAllNews = () => ({
