@@ -13,7 +13,9 @@ export function RoutesWithoutState({ isAuth }) {
     <Switch>
       {isAuth ? (
         <Redirect from='/login' to='/profile' />
-      ): null}
+      ) : (
+        <Redirect from='/profile' to='/login' />
+      )}
       <Route exact path='/'>
         <MainPage />
       </Route>
