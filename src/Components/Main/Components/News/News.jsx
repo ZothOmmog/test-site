@@ -25,7 +25,7 @@ export function NewsView({ isLoading, items, getNewsThunk, removeAllNews }) {
     <div key={item.id} className='News__Item'>
       <NewsItemWrapper>
         <NewsItem
-          imgPath={React.lazy}
+          imgPath={item.imgPath}
           title={item.title}
           description={item.description}
         />
