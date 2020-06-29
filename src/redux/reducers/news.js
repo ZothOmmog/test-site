@@ -10,10 +10,8 @@ export const news = (state = initialState, action) => {
     case actionTypes.SET_ONE_NEWS:
       return {
         ...state,
-        items: [
-        ...state.items,
-        action.news
-      ]};
+        items: action.items
+      };
     case actionTypes.REMOVE_ALL_NEWS:
       return initialState;
     case actionTypes.SET_IS_lOADING:

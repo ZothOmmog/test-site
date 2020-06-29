@@ -18,7 +18,7 @@ export function App({ getMeWithTokenThunk }) {
       await getMeWithTokenThunk();
       setIsLoading(false);
     })();
-  }, []);
+  }, [getMeWithTokenThunk]);
 
   return (
     <div className='App'>
@@ -29,7 +29,7 @@ export function App({ getMeWithTokenThunk }) {
           </Header>
           <Main />
         </>
-      ) : 'Загрузка'}
+      ) : 'Загрузка...'} 
     </div>
   );
 };

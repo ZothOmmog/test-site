@@ -7,7 +7,7 @@ import {
 import {
   setMe,
   setIsLoading,
-  setOneNews
+  setNews
 } from '../actions';
 
 //===========me===========
@@ -71,27 +71,10 @@ export const getNewsThunk = () => async (dispatch) => {
   dispatch(
     setIsLoading(true)
   );
+  const news = await GET_NEWS_FROM_SERVER();
 
-  let news;
-
-  news = await GET_NEWS_FROM_SERVER();
   dispatch(
-    setOneNews(news)
-  );
-
-  news = await GET_NEWS_FROM_SERVER();
-  dispatch(
-    setOneNews(news)
-  );
-
-  news = await GET_NEWS_FROM_SERVER();
-  dispatch(
-    setOneNews(news)
-  );
-
-  news = await GET_NEWS_FROM_SERVER();
-  dispatch(
-    setOneNews(news)
+    setNews(news)
   );
 
   dispatch(
