@@ -1,17 +1,39 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { MainPage } from '../MainPage';
 import { Login } from '../Login';
-import { News } from '../News/News';
-import { ProfileView } from '../Profile';
+import { News } from '../News';
+import { Profile } from '../Profile';
+import { connect } from 'react-redux';
 
-export function Routes() {
+
+
+export function RoutesWithoutState({ isAuth }) {
   return (
-      <Switch>
-        <Route path='/profile' component={ProfileView} />
-        <Route path='/login' component={Login} />
-        <Route path='/news' component={News} />
-        <Route path='/' component={MainPage} />
-      </Switch>
+    <Switch>
+      {isAuth ? (
+        <Redirect from='/login' to='/profile' />
+      ) : (
+        <Redirect from='/profile' to='/login' />
+      )}
+      <Route exact path='/'>
+        <MainPage />
+      </Route>
+      <Route path='/news'>
+        <News />
+      </Route>
+      <Route path='/profile'>
+        <Profile />
+      </Route>
+      <Route path='/login'>
+        <Login />
+      </Route>
+    </Switch>
   );
 }
+
+const mapStateToProps = (state) => ({
+  isAuth: state.me.isAuth
+});
+
+export const Routes = connect(mapStateToProps)(RoutesWithoutState);

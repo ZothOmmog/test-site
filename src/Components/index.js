@@ -1,1 +1,1 @@
-export { App } from './App/App';
+export { AppWithLogin } from './App';
