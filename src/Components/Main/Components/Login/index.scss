@@ -42,8 +42,11 @@
     margin-top: 10px;
   }
 
-  &__Input {
+  &__Form, &__Input[type='password'] {
     margin-top: $base*12;
+  }
+
+  &__Input {
     display: block;
     padding: 8px 0;
     border: none;
@@ -71,6 +74,7 @@
   &__InputError {
     display: none;
     color: $color-red;
+    margin-top: $base*4;
 
     &::before {
       content: '*'

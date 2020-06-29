@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './index.scss';
 import logo from '../../../../img/logo.png';
 import ClassNames from 'classnames';
 import { Button } from '../../../Button';
 import { Formik } from 'formik';
+import { connect } from 'react-redux';
+import { getMeWithNamePassThunk } from '../../../../redux';
 
-export function Login() {
+LoginView.propTypes = {
+  isLoading: PropTypes.bool,
+  getMeWithNamePassThunk: PropTypes.func
+}
+
+// TODO выяснилось, что isLoading тут не нужен, надо будет переделать BLL
+function LoginView({ isLoading, getMeWithNamePassThunk }) {
+  const [errorFromServer, setErrorFromServer] = useState();
+
   return (
     <div className='Login'>
       <div className='Login__Left'>
@@ -15,6 +26,12 @@ export function Login() {
               <img className='LoginForm__Logo' src={logo} alt='Логотип' />
             </div>
             <h2 className='LoginForm__Title'>Профиль</h2>
+            <div className={ClassNames(
+              'LoginForm__InputError',
+              { 'LoginForm__InputError_Visible': errorFromServer }
+            )}>
+              {errorFromServer}
+            </div>
             <Formik
               initialValues={{ login: '', password: '' }}
               validate={(values) => {
@@ -30,10 +47,16 @@ export function Login() {
 
                 return errors;
               }}
-              onSubmit={(values, { setSubmitting }) => {
-                setTimeout(() => {
-                  setSubmitting(false);
-                }, 2000);
+              onSubmit={async (values, { setSubmitting }) => {
+                const name = values.login;
+                const password = values.password;
+
+                const isAuth = await getMeWithNamePassThunk(name, password);
+
+                if (!isAuth) setErrorFromServer('Имя пользователя или пароль введены не верно');
+                else if (errorFromServer) setErrorFromServer('');
+
+                setSubmitting(false);
               }}
             >
               {({
@@ -45,13 +68,13 @@ export function Login() {
                 handleSubmit,
                 isSubmitting,
               }) => (
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className='LoginForm__Form'>
                   <input
                     type='text'
                     name='login'
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    value={values.login}
+                    value={values.login.trim()}
                     className={ClassNames(
                       'LoginForm__Input', 
                       { 'LoginForm__Input_Error': touched.login && errors.login }
@@ -69,7 +92,7 @@ export function Login() {
                     name='password'
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    value={values.password}
+                    value={values.password.trim()}
                     className={ClassNames(
                       'LoginForm__Input', 
                       { 'LoginForm__Input_Error': touched.password && errors.password }
@@ -105,3 +128,11 @@ export function Login() {
     </div>
   );
 }
+
+const mapStateToProps = (state) => ({
+  isLoading: state.me.isLoading
+});
+
+export const Login = connect(mapStateToProps, {
+  getMeWithNamePassThunk
+})(LoginView);
