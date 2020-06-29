@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { MainPage } from '../MainPage';
 import { Login } from '../Login';
 import { News } from '../News';
-import { ProfileView } from '../Profile';
+import { Profile } from '../Profile';
 import { connect } from 'react-redux';
 
 
@@ -23,7 +23,7 @@ export function RoutesWithoutState({ isAuth }) {
         <News />
       </Route>
       <Route path='/profile'>
-        <ProfileView />
+        <Profile />
       </Route>
       <Route path='/login'>
         <Login />

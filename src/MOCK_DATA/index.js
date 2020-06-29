@@ -8,10 +8,7 @@ const MOCK_DATA_LOGIN = {
   token: '4L10ccC6QD'
 }
 
-const MOCK_DATA_TOKEN = [
-  'qaBtDhhRBUv3lOuPgP9C',
-  'CLmDJHw3WzOSiWWwEA5Z'
-]
+const MOCK_DATA_TOKEN = 'qaBtDhhRBUv3lOuPgP9C';
 
 const MOCK_DATA_ME = {
   name: 'Admin',
@@ -47,20 +44,8 @@ const MOCK_DATA_SET_NEWS_THUNK = [
   }
 ]
 
-let prevToken = 1;
 export const GET_ME_FROM_SERVER_IF_LOGIN = async (name, password) => {
   await sleep(2000);
-
-  let token;
-
-  if (prevToken === 1) {
-    token = MOCK_DATA_TOKEN[0];
-    prevToken = 0;
-  }
-  else {
-    token = MOCK_DATA_TOKEN[1];
-    prevToken = 1;
-  }
 
   if(
     name !== MOCK_DATA_LOGIN.name || 
@@ -69,14 +54,14 @@ export const GET_ME_FROM_SERVER_IF_LOGIN = async (name, password) => {
 
   return {
     ...MOCK_DATA_ME,
-    token: token
+    token: MOCK_DATA_TOKEN
   };
 }
 
 export const GET_ME_FROM_SERVER_IF_TOKEN = async (token) => {
   await sleep(2000);
 
-  if(token !== MOCK_DATA_TOKEN.token) return false;
+  if(token !== MOCK_DATA_TOKEN) return false;
 
   return MOCK_DATA_ME;
 }
