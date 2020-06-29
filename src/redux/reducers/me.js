@@ -20,6 +20,7 @@ export const me = (state = initialState, action) => {
         img: action.img
       };
     case actionTypes.REMOVE_ME:
+      localStorage.removeItem('me');
       return initialState;
     case actionTypes.SET_IS_lOADING:
       return {
