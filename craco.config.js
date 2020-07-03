@@ -1,17 +1,15 @@
-const CracoAlias = require("craco-alias");
+const path = require('path');
+const { alias } = require('./src/lib');
+
+const aliasForCraco = {}
+
+for(let key in alias) {
+  aliasForCraco[key] = path.resolve(
+    __dirname, 
+    './src/' + alias[key]
+  );
+}
 
 module.exports = {
-  plugins: [
-    {
-      plugin: CracoAlias,
-      options: {
-        source: "options",
-        baseUrl: "./",
-        aliases: {
-          "@ui": "./src/ui",
-          "@styles": "./src/styles",
-        }
-      }
-    }
-  ]
+  webpack: { alias: { ...aliasForCraco } }
 };
