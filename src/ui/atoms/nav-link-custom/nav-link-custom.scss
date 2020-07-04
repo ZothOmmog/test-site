@@ -1,0 +1,15 @@
+@import '../../../styles/variables.scss';
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-black;
+  font-family: $font-main;
+  font-weight: lighter;
+  font-size: $font-size-sm;
+  text-decoration: none;
+  height: $link-height;
+  width: $link-width;
+  border-radius: $border-radius-lg;
+}
