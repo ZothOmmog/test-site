@@ -1,0 +1,8 @@
+// @import '@'
+
+.nav-link-bordered {
+  
+  &:hover {
+    border: $link-border-size solid $color-green;
+  }
+}
