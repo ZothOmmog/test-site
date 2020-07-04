@@ -1,5 +1,7 @@
 $base: 4px;
 
+$font-main: 'Roboto', sans-serif;
+
 $font-size-xs: 15px;
 $font-size-sm: 20px;
 $font-size-md: 32px;
@@ -19,6 +21,7 @@ $border-radius-xl: 50px;
 $link-width-sm: 140px;
 $link-width: 140px;
 $link-height: 40px;
+$link-border-size: 4px;
 
 $button-width-sm: $link-width-sm;
 $button-width: $link-width;
