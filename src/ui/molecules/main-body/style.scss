@@ -1,0 +1,15 @@
+@import '@styles/variables.scss';
+
+.main {
+  &__wrapper-logo {
+      text-align: center;
+  }
+
+  &__title {
+    margin: 50px 0 0;
+    font-weight: lighter;
+    font-family: $font-main;
+    font-size: $font-size-xl;
+    text-align: center;
+  }
+}
