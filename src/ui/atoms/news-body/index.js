@@ -1,0 +1,1 @@
+export { NewsBody } from './news-body';

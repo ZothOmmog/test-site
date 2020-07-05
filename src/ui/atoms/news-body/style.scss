@@ -1,0 +1,31 @@
+@import '@styles/variables.scss';
+
+.NewsItem {
+  display: flex;
+  
+  &__Img {
+    border-radius: $border-radius-lg;
+    max-width: 220px;
+    max-height: 140px;
+  }
+
+  &__ImgWrapper {
+    flex-basis: 220px;
+    flex-shrink: 0;
+  }
+
+  &__Body {
+    margin-left: $base * 4;
+  }
+  
+  &__Title {
+    font-weight: bold;
+    font-size: $font-size-sm;
+  }
+  
+  &__Description {
+    margin-top: $base * 4;
+    font-weight: lighter;
+    font-size: $font-size-xs;
+  }
+}
