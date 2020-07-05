@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './style.scss';
 
 export const MainPage = ({ Header, MainBody }) => (
@@ -11,3 +12,8 @@ export const MainPage = ({ Header, MainBody }) => (
         </div>
     </div>
 );
+
+MainPage.propTypes = {
+    Header: PropTypes.node.isRequired,
+    MainBody: PropTypes.node.isRequired
+};
