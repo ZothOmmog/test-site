@@ -1,0 +1,73 @@
+@import '@styles/variables.scss';
+
+.profile {
+    font-family: $font-main;
+    border-radius: $border-radius-md;
+    box-shadow: 0 0 20px 0 rgba($color: #000000, $alpha: 0.5);
+    height: 100%;
+
+    &__inner-wrapper {
+        margin: 0 $base*4;
+    }
+
+    &__title {
+        height: $base*50;
+        display: flex;
+        align-items: center;
+    }
+
+    &__img {
+        height: $base*25;
+        border-radius: $base*12.5;
+    }
+
+    &__login {
+        font-size: $font-size-md;
+        font-weight: lighter;
+        margin-left: $base*4;
+        color: $color-black;
+    }
+
+    &__nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+        
+        &-item:nth-child(1) {
+            border-bottom: 1px solid $color-green;
+            display: flex;
+            align-items: center;
+            height: $base*10;
+        }
+    }
+
+    &__info {
+        font-size: $font-size-md;
+        margin-top: $base*9;
+        
+        &-item + &-item {
+            margin-top: $base*4;
+        }
+
+        &-item {
+            display: flex;
+
+            &-title {
+                flex-basis: 250px;
+                color: $color-black;
+                
+                &::after {
+                    content: ':';
+                }
+            }
+
+            &-description {
+                color: $color-gray;
+            }
+        }
+    }
+}
