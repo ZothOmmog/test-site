@@ -1,0 +1,23 @@
+@import '@styles/variables.scss';
+
+.button-colored {
+    background-color: $color-green;
+    color: white;
+    height: $button-height;
+    width: $button-width;
+    border: none;
+    font-family: $font-main;
+    font-size: $font-size-xs;
+    border-radius: $border-radius-lg;
+    box-shadow: 0 4px 10px 0 rgba($color: $color-black, $alpha: 0.25);
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 4px 4px 0 rgba($color: $color-black, $alpha: 0.5) inset;
+    }
+
+    &_disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
