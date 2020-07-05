@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ClassNames from 'classnames';
-import './nav-link-bordered.scss';
-import { NavLinkCustom } from '@ui';
+import './style.scss';
+import { NavLinkCustom } from '@ui/atoms';
 
-export const NavLinkBordered = ({ children, className, ...outherProps }) => (
+export const NavLinkBordered = ({ children, className, active, ...outherProps }) => (
   <NavLinkCustom 
     className={ClassNames(
       'nav-link-bordered', 
+      {'nav-link-bordered_active': active },
       { [className]: className }
     )}
     {...outherProps}
@@ -17,5 +18,6 @@ export const NavLinkBordered = ({ children, className, ...outherProps }) => (
 );
 
 NavLinkBordered.propTypes = {
-  className: PropTypes.string.isRequired
+  className: PropTypes.string.isRequired,
+  active: PropTypes.bool
 };
