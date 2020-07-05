@@ -1,0 +1,1 @@
+export { InputFormWithError } from './input-form-with-error';

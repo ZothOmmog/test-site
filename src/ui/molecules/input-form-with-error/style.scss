@@ -1,0 +1,18 @@
+@import '@styles/variables.scss';
+
+.input-form {
+    &_error {
+        border: 1px solid $color-red;
+        border-radius: $border-radius-sm;
+    }
+
+    &__error-message {
+        margin-top: $base*3;
+        color: $color-red;
+        font-family: $font-main;
+
+        &::before {
+            content: '*';
+        }
+    }
+}
