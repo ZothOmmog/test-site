@@ -1,0 +1,14 @@
+@import '@styles/variables.scss';
+
+.input-form {
+    padding: 8px 2px;
+    border: none;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.25);
+    font-size: $font-size-xs;
+    width: $base*75;
+
+    &::placeholder {
+        text-transform: uppercase;
+        color: rgba($color: $color-black, $alpha: 0.25);
+    }
+}
