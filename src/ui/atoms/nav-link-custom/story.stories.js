@@ -3,7 +3,7 @@ import { NavLinkCustom } from './nav-link-custom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 export default {
-  title: 'NavLinkButton',
+  title: 'NavLinkCustom',
   component: NavLinkCustom
 };
 
@@ -11,7 +11,6 @@ export const redular = () => (
   <Router>
     <NavLinkCustom 
       to='/page'
-      dataOutherProps='outher'
     >
       Ссылка
     </NavLinkCustom>
