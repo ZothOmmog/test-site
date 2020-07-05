@@ -1,0 +1,18 @@
+@import '@styles/variables.scss';
+
+.button-exit {
+    background-color: transparent;
+    color: $color-red;
+    height: $button-height;
+    width: $base*20;
+    border: none;
+    font-family: $font-main;
+    font-size: $font-size-sm;
+    border-radius: $border-radius-sm;
+    transition-duration: $transition-duration;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba($color: $color-red, $alpha: 0.1);
+    }
+}
