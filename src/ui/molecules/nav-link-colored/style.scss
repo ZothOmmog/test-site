@@ -1,0 +1,14 @@
+@import '@styles/variables.scss';
+
+.nav-link-colored {
+  transition-duration: $transition-duration;
+  background-color: $color-green;
+
+  &:hover {
+    box-shadow: 0 4px 4px 0 rgba($color: $color-black, $alpha: 0.5) inset;
+  }
+  
+  &_active {
+    box-shadow: 0 4px 4px 0 rgba($color: $color-black, $alpha: 0.5) inset;
+  }
+}
