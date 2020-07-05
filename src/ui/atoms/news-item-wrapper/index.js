@@ -1,0 +1,1 @@
+export { NewsItemWrapper } from './news-item-wrapper';

@@ -1,0 +1,11 @@
+@import '@styles/variables.scss';
+
+.NewsItemWrapper {
+  border: 10px solid  rgba($color: $color-green, $alpha: 0.5);
+  border-radius: $border-radius-lg;
+
+  &__InnerWrapper {
+    margin: $base * 4;
+    display: flex;
+  }
+}
