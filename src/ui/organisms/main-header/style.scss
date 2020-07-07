@@ -1,6 +1,8 @@
 @import '@styles/variables.scss';
 
 .main-header {
+    box-shadow: 0 4px 4px 0 rgba($color: #000000, $alpha: 0.25);
+
     &__logo {
         height: $base*10;
     }
