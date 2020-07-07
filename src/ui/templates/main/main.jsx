@@ -2,18 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
 
-export const MainPage = ({ Header, MainBody }) => (
+export const MainTemplate = ({ children }) => (
     <div className="main-page">
-        <div className="main-page__header">
-            <Header />
-        </div>
+        {children[0]}
         <div className="main-page__body">
-            <MainBody />
+            {children[1]}
         </div>
     </div>
 );
 
-MainPage.propTypes = {
-    Header: PropTypes.node.isRequired,
-    MainBody: PropTypes.node.isRequired
+MainTemplate.propTypes = {
+    children: PropTypes.arrayOf(PropTypes.ele)
 };
