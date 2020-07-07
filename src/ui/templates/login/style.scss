@@ -1,0 +1,26 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100%;
+
+  &__body {
+    display: flex;
+    flex-grow: 2;
+  }
+
+  &__left {
+    width: 40%;
+    min-width: 375px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__right {
+    width: 60%;
+    background-image: url('./Right.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
